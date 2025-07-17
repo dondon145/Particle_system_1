@@ -20,6 +20,7 @@ GREEN = [0, 255, 0, 255]
 moving_group = pygame.sprite.Group()
 
 particles = []
+color_list = [RED, BLUE]
 
 
 running = True
@@ -31,7 +32,7 @@ while running :
 
         if event.type == KEYDOWN:
             for i in range(30):
-                obj = particle.Particle(RED, 30, 30, 400, 400, random.randrange(1, 2)/5, random.randrange(-180, 180), 5, particles)
+                obj = particle.Particle(color_list[random.randrange(0,2)], 30, 30, 400, 400, random.randrange(1, 2)/5, random.randrange(-180, 180), 5, particles)
                 particles.append(obj)
                 moving_group.add(particles[i])
 
