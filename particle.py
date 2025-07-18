@@ -26,7 +26,7 @@ class Particle(pygame.sprite.Sprite):
     def update(self):
         # 1/60/60 - every second there plays 60 frames, the other division by 120 is here just to make it go slower as of my desire
         if self.life > 0:
-            self.add_time(0.01)
+            self.add_time(1/10)
             self.pos_x += self.velocity['x']* self.time
             self.pos_y += self.velocity['y']* self.time
             self.rect.center = (self.pos_x, self.pos_y)

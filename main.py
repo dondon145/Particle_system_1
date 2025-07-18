@@ -9,7 +9,8 @@ DISPLAYWIDTH = 800
 DISPLAYHEIGHT = 800
 
 DISPLAY = pygame.display.set_mode((DISPLAYWIDTH, DISPLAYHEIGHT))
-
+clock = pygame.time.Clock()
+FPS = 60
 # colors 
 BLACK = [0, 0, 0]
 RED = [255, 0, 0, 255]
@@ -32,13 +33,14 @@ while running :
 
         if event.type == KEYDOWN:
             for i in range(30):
-                obj = particle.Particle(color_list[random.randrange(0,2)], 30, 30, 400, 400, random.randrange(1, 2)/5, random.randrange(-180, 180), 5, particles)
+                obj = particle.Particle(color_list[random.randrange(0,2)], 30, 30, 400, 400, random.randrange(1, 5), random.randrange(-180, 180), 5, particles)
                 particles.append(obj)
                 moving_group.add(particles[i])
 
     DISPLAY.fill(BLACK)
     moving_group.update()
     moving_group.draw(DISPLAY)
+    clock.tick(FPS)
 
     
     pygame.display.flip()
