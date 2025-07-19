@@ -46,8 +46,8 @@ class Particle(pygame.sprite.Sprite):
         self.pos_x = pos_x
         self.pos_y = pos_y
 
-        self.vel_x = speed* math.cos(angle)
-        self.vel_y = -1* speed* math.sin(angle)
+        self.vel_x = speed* math.cos(angle* math.pi/ 180)
+        self.vel_y = -1* speed* math.sin(angle* math.pi/ 180)
         self.velocity = {"x": self.vel_x, "y": self.vel_y}
         
         self.time = 0
